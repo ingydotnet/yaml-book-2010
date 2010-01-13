@@ -1,0 +1,131 @@
+#!/bin/sh
+exec scala "$0" "$@"
+!#
+//------------------------------------------------------------
+// add-ids [AsciiDoc files]
+//
+// Attempts to find the starts of paragraphs that don't have ids defined and adds
+// them. The id is synthesized from the first 30 or so characters of the paragraph.
+// If no AsciiDoc files are specified, it defaults to all files matching "*.asc".
+//
+// The original files are backed up to the "backupDir" directory (defaults to "tmp"),
+// so you can recover them if the tool crashes!
+
+import java.io._
+
+val asciiDocFileDirectory = "chapters"
+val asciiDocFileExtension = ".asc"
+val lineSeparator = System.getProperty("line.separator")
+val backupDir = new File("tmp")
+
+val idPrefix = "para_"
+
+// Append the first "subStringLength" characters from a string to the id.
+// (Whitespace, etc. are changed...)
+val subStringLength = 30
+
+// Regex to find the line before a probable paragraph. The different cases we
+// handle in the capture group are:
+// 1) Coninued paragraphs (after the +) inside a "variable list entry", e.g.,
+//      Foo::
+//        Foo is known for X
+//      +
+//      Compare with "Bar"...  // This paragraph gets a tag.
+// 2) Block quotes.
+// 3) Section starts.
+// If none of these matches in the (...)?, then it the RE will also match a blank line.
+val beforeParagraphRE = ("""^\s*(\+|\*{4,}|=+\s*\w+.*)?\s*""" + lineSeparator + "$").r
+
+// Regex for the "----" that begin and end literal blocks, in which we don't want any tags!
+val literalBlockRE = ("""^\s*-{4,}\s*""" + lineSeparator + "$").r
+
+// A line of text, which might begin with a word in formatting, like +...+, etc.
+val textRE = ("""^\s*([\w\'\`\+_]+.*)\s*""" + lineSeparator + "$").r
+
+// Lines of text to skip.
+val skippedTextRE = ("""^\s*include::.*""" + lineSeparator + "$").r
+
+
+def findAsciiDocFiles = {
+    val cwd = new File(asciiDocFileDirectory)
+    cwd.listFiles(new FileFilter() {
+        def accept(file: File) = file.getName endsWith asciiDocFileExtension
+    })
+}
+
+implicit def defaultCopyFilter: String => String = {
+    s => s
+}
+
+def copy(source: File, destination: File)(implicit filter: String => String) = {
+    destination createNewFile
+    val in  = new BufferedReader(new FileReader(source))
+    val out = new BufferedWriter(new FileWriter(destination))
+    var line = in.readLine
+    while (line != null) {
+        out write filter(line + lineSeparator)
+        line = in readLine
+    }
+    in.close
+    out.close
+}
+
+def makeId(text: String) = {
+    // Why does Java String.substring throw an exception if the 2nd arg > length? Just truncate!
+    val sublen = if (text.length > subStringLength) subStringLength else text.length
+    idPrefix + (text substring(0, sublen) toLowerCase() replaceAll("\\W+", "_"))
+}
+
+def processFile(file: File) = {
+    val backupFile = new File(backupDir.getName + "/" + file.getName)
+    copy(file, backupFile)
+
+    var inLiteralBlock = false
+    var beforeParagraphSeen = false
+    copy(backupFile, file) {
+        line => line match {
+            case beforeParagraphRE(_) => {
+                beforeParagraphSeen = true
+                line
+            }
+            case literalBlockRE() => {
+                inLiteralBlock = if (inLiteralBlock) false else true
+                line
+            }
+            case skippedTextRE() => {
+                beforeParagraphSeen = false
+                line
+            }
+            case textRE(text) => inLiteralBlock match {
+                case true => {
+                    beforeParagraphSeen = false
+                    line
+                }
+                case false => beforeParagraphSeen match {
+                    case true => {
+                        beforeParagraphSeen = false
+                        String.format("[[%s]]\n%s", makeId(text), line)
+                    }
+                    case false => line
+                }
+            }
+            case _ => {
+                beforeParagraphSeen = false
+                line
+            }
+        }
+    }
+}
+
+if (! backupDir.exists) {
+    println("making backup directory: " + backupDir)
+    backupDir.mkdir
+}
+
+val files = args.length match {
+    case 0 => findAsciiDocFiles
+    case _ => args map { new File(_) }
+}
+
+println("Processing: " + (files map { _ getName } reduceLeft { _ + ", " + _ }))
+files foreach { f => processFile(f) }

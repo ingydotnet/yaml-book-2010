@@ -1,0 +1,47 @@
+== Research Ideas
+- Search Safari for YAML and see how other books use it.
+- Google YAML and compile how people are using it
+- Compile a list of all YAML related software implementations
+
+== Technology
+- xmllint
+  - http://www.sagehill.net/docbookxsl/InstallingAProcessor.html
+  - xmllint --xinclude --noout --postvalid book.xml
+- XMLmind XML Editor (XXE)
+- oXygen (http://www.oxygenxml.com/)
+
+== Numbers
+isbn: 9780596806071
+
+== DocBook
+
+- Tags:
+  - programlisting
+  - example
+  - itemizedlist
+  - table
+
+- XInclude program files:
+    <programlisting> 
+    <xi:include 
+      xmlns:xi="http://www.w3.org/2001/XInclude" 
+      parse="text" href="hello.c" /> 
+    </programlisting> 
+
+- URLs:
+  http://wiki.docbook.org/topic/DocBookAuthoringTools
+  http://www.sagehill.net/docbookxsl/ToolsSetup.html#Validation
+  http://www.oreillynet.com/xml/blog/2007/05/docbook_elements_in_the_wild_a.html
+  https://prod.oreilly.com/external/tools/docbook/prod/trunk/samples/ (username: guest; empty password)
+  http://www.docbook.org/tdg/en/html/docbook.html
+  http://www.dpawson.co.uk/docbook/reference.html
+  http://www.docbook.org/
+  http://www.xmlmind.com/xmleditor/documentation.shtml
+  http://www.oasis-open.org/docbook/xml/4.4/docbookx.dtd
+  http://www.xmlmind.com/xmleditor/documentation.shtml
+  http://www.xmlmind.com/xmleditor/_distrib/doc/quickrefcard/quickrefcard-Letter.pdf
+  http://www.xml.com/pub/a/2007/06/20/getting-productive-with-xmlmind.html
+
+- CSS
+  https://prod.oreilly.com/external/tools/xxe/customizations/xmlmind_custom.zip (username: guest; empty password)
+  http://www.xmlmind.com/xmleditor/addons.shtml#manual_install
