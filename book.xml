@@ -187,8 +187,12 @@ these simple ways, then simpler programming seemed imminent.</simpara>
 </sect1>
 <sect1 id="_what_is_a_yaml">
 <title>What is a YAML?</title>
-<simpara id="para_x">x</simpara>
-<simpara id="para_y">y</simpara>
+<simpara id="para_yaml_it_rhymes_with_camel_">YAML (it rhymes with "camel") is a Programming Language Agnostic, Human
+Readable/Editable, Data/Object <emphasis>Serialization Language</emphasis>. If you are an
+experienced geek, you probably think that YAML is an acronym for "Yet Another
+Markup Language". Good guess. Unfortunately, it&#8217;s wrong!</simpara>
+<simpara id="para_yaml_is_a_recursive_acronym_fo">YAML is a recursive acronym for "YAML Ain&#8217;t Markup Language". Why? Because it
+ain&#8217;t! &#8230;</simpara>
 <simpara>include::chapters/YamlProjectsOverview.asc[]</simpara>
 <simpara>include::chapters/YamlInTheWild.asc[]</simpara>
 </sect1>
