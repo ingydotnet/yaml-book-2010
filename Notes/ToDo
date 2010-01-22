@@ -1,5 +1,5 @@
 - Google search analysis of "YAML"
 - Convert sake to make
 - Write Chapter 1
-
+- Add git post-commit hook to do svn commit with same msg.
 
