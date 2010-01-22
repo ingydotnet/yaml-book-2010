@@ -1,27 +1,38 @@
-literal
-para
+This file documents the tags in use...
+
+== Key
+C - Container tag
+B - Block section tag
+P - Phrase (span) tag
+
+C) book - Outermost tag for book
+C) chapter - Chapter container
+C) sect1 - First level chapter section
+C) sect2 - Second level chapter section
+B) para - Normal paragraph
+B) simpara - ??? (produced by ascii doc)
+B) programlisting - Code sections
+B) screen - Output of a command
+B) title - Book or Chapter title
+P) emphasis - Italic phrase
+P) literal - Constant width
+
+section
 entry
 indexterm
 primary
-title
-programlisting
 userinput
 listitem
 secondary
 row
 xref
-emphasis
-sect2
 function
 filename
-section
-screen
 replaceable
 varlistentry
 term
 prompt
 systemitem
-sect1
 command
 itemizedlist
 example
@@ -44,5 +55,4 @@ thead
 table
 orderedlist
 see
-chapter
 
