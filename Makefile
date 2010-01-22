@@ -1,6 +1,6 @@
 .PHONY: clean
 
-all: book.xml
+all: book.xml clean
 
 clean:
 	rm -fr book.fo dist tmp
@@ -18,7 +18,7 @@ dist/book.xml: dist chapters/*.asc etc/*.conf
 	    --unsafe -d book -a icons -b docbook \
 	    -o $@ \
 	    book.asc
-	perl -pi -e 's/^\[\[.+\]\]\n//' chapters/*.asc
+	perl -pi -e 's/^\[\[.+\]\]\n//' chapters/[A-Z]*.asc
 
 html: dist
 	bin/add-ids
@@ -27,7 +27,7 @@ html: dist
 	    --unsafe -d book -a toc -a numbered -a icons -a toclevels=3 \
 	    -o dist/book.html \
 	    book.asc
-	perl -pi -e 's/^\[\[.+\]\]\n//' chapters/*.asc
+	perl -pi -e 's/^\[\[.+\]\]\n//' chapters/[A-Z]*.asc
 
 # pdf: dist
 # 	bin/a2x --format=pdf --fop-opts= --asciidoc-opts= \
