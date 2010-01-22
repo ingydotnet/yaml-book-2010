@@ -2,4 +2,6 @@
 - Convert sake to make
 - Write Chapter 1
 - Add git post-commit hook to do svn commit with same msg.
+- Add a Makefile rule to open XMLEditor with book.xml
+- Get pdf to build
 
