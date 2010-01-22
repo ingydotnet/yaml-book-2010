@@ -1,15 +1,200 @@
-<!DOCTYPE book PUBLIC '-//OASIS//DTD DocBook XML V6.4//EN' 'http://www.oasis-open.org/docbook/xml/4.4/docbookx.dtd'><book>
-  <!-- Reference new files using XIncludes (not entities): http://www.sagehill.net/docbookxsl/ModularDoc.html#UsingXinclude -->
-  <!-- Each file should have a DOCTYPE at the top of it so you can validate it alone (just like this but with a chapter/preface instead of book-->
-  <!-- Remember, using XIncludes means that you'll have to add a flag (typically 'xinclude' with one or two dashes) when using XML processors/parsers -->
-  <!-- Validate with xmllint as follows (Basic setup same as libxslt: http://www.sagehill.net/docbookxsl/InstallingAProcessor.html)-->
-  <!-- (please collapse dashes in the line beloew) -->
-  <!-- $ xmllint - -xinclude - -noout - -postvalid book.xml -->
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE book PUBLIC "-//OASIS//DTD DocBook XML V4.4//EN" "http://www.oasis-open.org/docbook/xml/4.4/docbookx.dtd">
 
+<book lang="en">
 <title>YAML</title>
-
-<bookinfo><edition>1</edition><isbn>9780596806071</isbn></bookinfo>
-<xi:include href='ch00.xml' xmlns:xi='http://www.w3.org/2001/XInclude'/>
-<xi:include href='ch01.xml' xmlns:xi='http://www.w3.org/2001/XInclude'/>
-<xi:include href='ch02.xml' xmlns:xi='http://www.w3.org/2001/XInclude'/>
+<bookinfo>
+      <title>Programming Scala</title>
+      <author>
+        <firstname>Dean</firstname>
+        <surname>Wampler</surname>
+        <affiliation><orgname>Object Mentor, Inc.</orgname></affiliation>
+        <email>dean@deanwampler.com</email>
+      </author>
+      <author>
+        <firstname>Alex</firstname>
+        <surname>Payne</surname>
+        <affiliation><orgname>Twitter, Inc.</orgname></affiliation>
+        <email>alex@al3x.net</email>
+      </author>
+      <copyright>
+        <year>2008</year>
+        <holder>O&#x2019;Reilly Media    </holder> </copyright>
+      <abstract>
+        <para><citetitle>Programming Scala</citetitle> introduces an exciting new language that offers all the benefits of a modern object model, functional programming, and an advanced type system. Packed with code examples, this comprehensive book teaches you how to be productive with Scala quickly, and explains what makes this language ideal for today's highly scalable, component-based applications that support concurrency and distribution. You'll also learn the advantages that Scala offers as a language for the Java Virtual Machine. </para>
+        <para>Learn more at <ulink url="http://programmingscala.com/">programmingscala.com</ulink> or <ulink url="http://oreilly.com/catalog/9780596157746/">at the book's catalog page</ulink>.</para>
+      </abstract>
+      <legalnotice>
+        <para>This work has been released under the <ulink url="http://creativecommons.org/licenses/by-nc/3.0/">Creative Commons Attribution-Noncommercial</ulink>.</para>
+      </legalnotice>
+</bookinfo>
+<preface id="_preface">
+<title>Preface</title>
+<sect1 id="_conventions_used_in_this_book">
+<title>Conventions Used in This Book</title>
+<simpara id="para_the_following_typographical_co">The following typographical conventions are used in this book:</simpara>
+<variablelist id="para__italic__">
+<varlistentry id="varlistentry-italic">
+<term>
+<emphasis>Italic</emphasis>
+</term>
+<listitem>
+<simpara>
+  Indicates new terms, URLs, email addresses, filenames, and file
+  extensions.
+</simpara>
+</listitem>
+</varlistentry>
+<varlistentry id="varlistentry-constant-width">
+<term>
+<literal>Constant width</literal>
+</term>
+<listitem>
+<simpara>
+  Used for program listings, as well as within paragraphs to refer to
+  program elements such as variable or function names, databases, data
+  types, environment variables, statements, and keywords.
+</simpara>
+</listitem>
+</varlistentry>
+<varlistentry id="varlistentry-constant-width-bold">
+<term>
+<userinput>Constant width bold</userinput>
+</term>
+<listitem>
+<simpara>
+  Shows commands or other text that should be typed literally by the
+  user.
+</simpara>
+</listitem>
+</varlistentry>
+<varlistentry id="varlistentry-constant-width-italic">
+<term>
+<replaceable>Constant width italic</replaceable>
+</term>
+<listitem>
+<simpara>
+  Shows text that should be replaced with user-supplied values or by
+  values determined by context.
+</simpara>
+</listitem>
+</varlistentry>
+</variablelist>
+<tip id="para_tip_this_icon_signifies_a_tip"><simpara>This icon signifies a tip, suggestion, or general note.</simpara></tip>
+<caution id="para_caution_this_icon_indicates_a"><simpara>This icon indicates a warning or caution.</simpara></caution>
+</sect1>
+<sect1 id="_using_code_examples">
+<title>Using Code Examples</title>
+<simpara id="para_this_book_is_here_to_help_you_">This book is here to help you get your job done. In general, you may use
+the code in this book in your programs and documentation. You do not
+need to contact us for permission unless you’re reproducing a
+significant portion of the code. For example, writing a program that
+uses several chunks of code from this book does not require permission.
+Selling or distributing a CD-ROM of examples from O’Reilly books does
+require permission. Answering a question by citing this book and quoting
+example code does not require permission. Incorporating a significant
+amount of example code from this book into your product’s
+documentation does require permission.</simpara>
+<simpara id="para_we_appreciate_but_do_not_requ">We appreciate, but do not require, attribution. An attribution
+usually includes the title, author, publisher, and ISBN. For example:
+&#8220;<emphasis>YAML</emphasis> by Ingy döt Net. Copyright 2009 O’Reilly Media, Inc.,
+978-0-596-xxxx-x.&#8221;</simpara>
+<simpara id="para_if_you_feel_your_use_of_code_e">If you feel your use of code examples falls outside fair use or the
+permission given above, feel free to contact us at
+<ulink url="mailto:permissions@oreilly.com">permissions@oreilly.com</ulink>.</simpara>
+</sect1>
+<sect1 id="_safari_books_online">
+<title>Safari® Books Online</title>
+<note id="para_note_when_you_see_a_safari_"><simpara>When you see a Safari® Books Online icon on the cover of your
+      favorite technology book, that means the book is available online
+      through the O’Reilly Network Safari Bookshelf.</simpara></note>
+<simpara id="para_safari_offers_a_solution_that_">Safari offers a solution that’s better than e-books. It’s a virtual
+library that lets you easily search thousands of top tech books, cut and
+paste code samples, download chapters, and find quick answers when you
+need the most accurate, current information. Try it for free at
+<ulink url="http://my.safaribooksonline.com">http://my.safaribooksonline.com</ulink>.</simpara>
+</sect1>
+<sect1 id="_how_to_contact_us">
+<title>How to Contact Us</title>
+<simpara id="para_please_address_comments_and_qu">Please address comments and questions concerning this book to the
+publisher:</simpara>
+<screen>O’Reilly Media, Inc.
+1005 Gravenstein Highway North
+Sebastopol, CA 95472
+800-998-9938 (in the United States or Canada)
+707-829-0515 (international or local)
+707 829-0104 (fax)</screen>
+<simpara id="para_we_have_a_web_page_for_this_bo">We have a web page for this book, where we list errata, examples, and
+any additional information. You can access this page at:</simpara>
+<screen>http://www.oreilly.com/catalog/CATALOGPAGE</screen>
+<simpara id="para_to_comment_or_ask_technical_qu">To comment or ask technical questions about this book, send email to:</simpara>
+<screen>mailto:bookquestions@oreilly.com[bookquestions@oreilly.com]</screen>
+<simpara id="para_for_more_information_about_our">For more information about our books, conferences, Resource Centers, and
+the O’Reilly Network, see our web site at:</simpara>
+<screen>http://www.oreilly.com</screen>
+</sect1>
+<sect1 id="_acknowledgements">
+<title>Acknowledgements</title>
+<simpara id="para_as_we_developed_the_book_many">As we developed the book, many people&#8230;</simpara>
+</sect1>
+</preface>
+<chapter id="_yaml_a_language_for_data">
+<title>YAML - A Language for Data</title>
+<simpara id="para_my_friend_and_colleague_steve_">My friend and colleague Steve Howell used to repeat, "Programming is
+just about moving data from here (he holds his hands out to the left and
+moves them to the right with a dry, sardonic chuckle) to there". I&#8217;ve
+always been of the notion that the better organized your data becomes,
+the more minimal and beautiful the programs you write to move it from
+one place to the other, can be.</simpara>
+<simpara id="para_yaml_is_primarily_a_language_f">YAML is primarily a Language for Data. There are, of course, many
+ways to encode data into a serialized (and even human readable) form.
+That&#8217;s not what I&#8217;m talking about. Just as natural languages are
+about communicating ideas from person to person, and computer
+languages are about communicating instructions from people to
+computers, YAML is a <emphasis>language</emphasis> for communicating the meaning of
+data. This communication can be:</simpara>
+<screen>- Human to Computer
+- Computer to Human
+- Computer to Computer
+- Human to Human</screen>
+<simpara id="para_if_you_ve_never_seen_yaml_befo">If you&#8217;ve never seen YAML before, well&#8230; trust me&#8230; you actually
+<emphasis>have</emphasis> seen YAML before. The list just above this paragraph is a
+complete and well formed YAML document. To a computer, it represents an
+array of unicode character strings. To an everyday reader like yourself,
+it&#8217;s a list of bullet points.</simpara>
+<simpara id="para_this_is_the_inherent_beauty_of">This is the inherent beauty of YAML. Data can be communicated simply,
+concisely and accurately to both the computers and people.</simpara>
+<sect1 id="_modern_data_and_programming_languages">
+<title>Modern Data and Programming Languages</title>
+<simpara id="para_when_i_studied_computer_scienc">When I studied Computer Science back in the prehistoric days (I
+was actually a COBOL teaching assistant and wrote my first Fortran
+programs on punch cards), we learned about many different dara
+structures. Things like binary trees, hashed arrays and doubly linked
+lists. I got the idea that most of my computer career would be about
+learning new and more powerful data structures.</simpara>
+<simpara id="para_when_i_put_my_mainframe_assemb">When I put my mainframe assembler days to rest, and entered the
+brave new world of Perl and other dynamic, modern languages, I was
+amazed that the exact opposite was true. These new languages had
+boiled everything down to 2 kinds of collections: hashes (aka
+dictionaries, objects, associative arrays, or mappings) and arrays
+(aka lists or sequences). That&#8217;s it. If you wanted anything else, you
+could build it up from these two types. In practice though, you never
+needed to.</simpara>
+<simpara id="para_as_i_became_more_familiar_with">As I became more familiar with these modern languages, I was
+impressed that this view of the world was not a shortcut or cheap way
+out. It was a primary pillar of strength. If all data was shaped in
+these simple ways, then simpler programming seemed imminent.</simpara>
+</sect1>
+<sect1 id="_what_is_a_yaml">
+<title>What is a YAML?</title>
+<simpara id="para_x">x</simpara>
+<simpara id="para_y">y</simpara>
+<simpara>include::chapters/YamlProjectsOverview.asc[]</simpara>
+<simpara>include::chapters/YamlInTheWild.asc[]</simpara>
+</sect1>
+</chapter>
+<index id="Index">
+<title>Index</title>
+<simpara>include::chapters/Colophon.asc[]</simpara>
+</index>
 </book>
