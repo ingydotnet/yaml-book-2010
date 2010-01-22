@@ -10,6 +10,7 @@
 - Replace Dean's Scala metadata with Ingy's YAML stuff
 - Install xmlmind_custom.zip per getstarteddocbook.xml.pdf
 - Make sure tools don’t put any block elements within <para>s.
+- Resolve svn's misunderstanding of `Notes/DocBook/getstarteddocbook/figs`
 
 == Ask Simon
 
