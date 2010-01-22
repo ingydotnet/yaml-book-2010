@@ -11,6 +11,7 @@
 - Install xmlmind_custom.zip per getstarteddocbook.xml.pdf
 - Make sure tools don’t put any block elements within <para>s.
 - Resolve svn's misunderstanding of `Notes/DocBook/getstarteddocbook/figs`
+- Find easy way to make simon's terminal black on white
 
 == Ask Simon
 
