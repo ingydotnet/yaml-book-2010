@@ -1,13 +1,13 @@
 == Tasks
 
 + Convert sake to make
-_ Replace Dean's Scala metadata with Ingy's YAML stuff
 - Google search analysis of "YAML" (on Wiki)
 - Move Notes stuff to wiki?
 - Write Chapter 1
 - Add git post-commit hook to do svn commit with same msg.
 - Add a Makefile rule to open XMLEditor with book.xml
 - Get pdf to build
+- Replace Dean's Scala metadata with Ingy's YAML stuff
 - Install xmlmind_custom.zip per getstarteddocbook.xml.pdf
 - Make sure tools don’t put any block elements within <para>s.
 - Resolve svn's misunderstanding of `Notes/DocBook/getstarteddocbook/figs`
