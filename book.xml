@@ -140,19 +140,19 @@ the O’Reilly Network, see our web site at:</simpara>
 </preface>
 <chapter id="_yaml_a_language_for_data">
 <title>YAML - A Language for Data</title>
-<simpara id="para_my_friend_and_colleague_steve_">My friend and colleague Steve Howell used to repeat, "Programming is
-just about moving data from here (he holds his hands out to the left and
-moves them to the right with a dry, sardonic chuckle) to there". I&#8217;ve
-always been of the notion that the better organized your data becomes,
-the more minimal and beautiful the programs you write to move it from
-one place to the other, can be.</simpara>
-<simpara id="para_yaml_is_primarily_a_language_f">YAML is primarily a Language for Data. There are, of course, many
-ways to encode data into a serialized (and even human readable) form.
-That&#8217;s not what I&#8217;m talking about. Just as natural languages are
-about communicating ideas from person to person, and computer
-languages are about communicating instructions from people to
-computers, YAML is a <emphasis>language</emphasis> for communicating the meaning of
-data. This communication can be:</simpara>
+<simpara id="para_my_friend_and_colleague_steve_">My friend and colleague Steve Howell used to always say, "Programming is
+just about moving data from here (he holds his hands out to his left
+side and moves them over to his right with a dry, sardonic chuckle) to
+there". I&#8217;ve always been of the notion that the better organized your
+data becomes, the more minimal and beautiful the programs you write, to
+move it from one place to the other, can be.</simpara>
+<simpara id="para_yaml_is_a__language__for__data">YAML is a <emphasis>Language</emphasis> for <emphasis>Data</emphasis>. There are, of course, many ways to
+encode data into a serialized (and even human readable) form. That&#8217;s
+not what I&#8217;m talking about. Just as natural languages are about
+communicating ideas from person to person, and computer languages
+are about communicating instructions from people to computers, YAML
+is a <emphasis>language</emphasis> for communicating the meaning of data. This
+communication can be:</simpara>
 <screen>- Human to Computer
 - Computer to Human
 - Computer to Computer
@@ -166,33 +166,78 @@ it&#8217;s a list of bullet points.</simpara>
 concisely and accurately to both the computers and people.</simpara>
 <sect1 id="_modern_data_and_programming_languages">
 <title>Modern Data and Programming Languages</title>
-<simpara id="para_when_i_studied_computer_scienc">When I studied Computer Science back in the prehistoric days (I
-was actually a COBOL teaching assistant and wrote my first Fortran
-programs on punch cards), we learned about many different dara
-structures. Things like binary trees, hashed arrays and doubly linked
-lists. I got the idea that most of my computer career would be about
-learning new and more powerful data structures.</simpara>
-<simpara id="para_when_i_put_my_mainframe_assemb">When I put my mainframe assembler days to rest, and entered the
+<simpara id="para_when_i_studied_computer_scienc">When I studied Computer Science back in the prehistoric days (I was
+actually a COBOL teaching assistant and wrote my first Fortran programs
+on punch cards), we learned about many different data structures. Things
+like binary trees, hashed arrays and doubly linked lists. I got the idea
+that most of my computer career would be about learning new and more
+powerful data structures.</simpara>
+<simpara id="para_when_i_put_my_ibm_mainframe_as">When I put my IBM mainframe assembler days to rest, and entered the
 brave new world of Perl and other dynamic, modern languages, I was
 amazed that the exact opposite was true. These new languages had
-boiled everything down to 2 kinds of collections: hashes (aka
+boiled everything down to 2 kinds of data collections: hashes (aka
 dictionaries, objects, associative arrays, or mappings) and arrays
 (aka lists or sequences). That&#8217;s it. If you wanted anything else, you
 could build it up from these two types. In practice though, you never
 needed to.</simpara>
-<simpara id="para_as_i_became_more_familiar_with">As I became more familiar with these modern languages, I was
-impressed that this view of the world was not a shortcut or cheap way
-out. It was a primary pillar of strength. If all data was shaped in
-these simple ways, then simpler programming seemed imminent.</simpara>
+<simpara id="para_as_i_became_more_familiar_with">As I became more familiar with these modern languages, I was impressed
+that this view of the world was not a shortcut or cheap way out. It was
+a primary pillar of strength. If all data was shaped in these simple
+ways, then simpler programming seemed imminent.</simpara>
 </sect1>
 <sect1 id="_what_is_a_yaml">
 <title>What is a YAML?</title>
-<simpara id="para_yaml_it_rhymes_with_camel_">YAML (it rhymes with "camel") is a Programming Language Agnostic, Human
-Readable/Editable, Data/Object <emphasis>Serialization Language</emphasis>. If you are an
-experienced geek, you probably think that YAML is an acronym for "Yet Another
-Markup Language". Good guess. Unfortunately, it&#8217;s wrong!</simpara>
-<simpara id="para_yaml_is_a_recursive_acronym_fo">YAML is a recursive acronym for "YAML Ain&#8217;t Markup Language". Why? Because it
-ain&#8217;t! &#8230;</simpara>
+<simpara><emphasis role="strong">YAML</emphasis> (it rhymes with "camel") is a Cross Programming Language, Human
+Readable/Meaningful/Editable, Data/Object <emphasis>Serialization Language</emphasis>. In
+other words, YAML is a format that lets you put any data object into a
+text file and feed it to a Ruby [or Perl or Python or Java] program or
+show it to a coworker or email it to your mom, and have all of them be
+able to understand and play with it.</simpara>
+<simpara id="para_consider_this_yaml_object_">Consider this YAML object:</simpara>
+<screen>recipients:
+  languages:
+  - Ruby
+  - Python
+  - Perl
+  - Java
+  people: [ Mom, My boss ]
+features:
+- Cross Programming Language
+- Human: [ Readable, Meaningful, Editable ]</screen>
+<simpara id="para_if_you_are_an_experienced_geek">If you are an experienced geek, you probably think that YAML is an
+acronym for "Yet Another Markup Language". Good guess. Unfortunately,
+it&#8217;s wrong!</simpara>
+<simpara id="para_yaml_is_a_recursive_acronym_fo">YAML is a recursive acronym for "YAML Ain&#8217;t Markup Language". Why?
+Because it ain&#8217;t! If you look at Wikipedia, and read the first sentence
+of these articles, you&#8217;ll see the difference:</simpara>
+<screen>XML: is a ... markup language
+JSON: is a ... data interchange format
+YAML: is a ... data serialization format</screen>
+<simpara id="para_when_the_yaml_project_first_go">When the YAML project first got started in 2001, when Clark Evans and
+Oren Ben-Kiki were trying to make a simpler, friendlier XML. When I
+joined up with them, a bit later, we soon realized that what we were
+making was not a markup language (a way to markup text data), but
+instead a language to store the data structures that were common in our
+favorite programming languages. [The O&#8217;Reilly/OSCON Languages]</simpara>
+<simpara id="para_unfortunately_we_already_had_t">Unfortunately we already had the name "Yet Another Markup Lanugage"
+acronym, but like any good group of geekly guys, we were able to
+backronym our way out of it.</simpara>
+<simpara id="para_when_xml_came_out_people_trie">When XML came out, people tried to push it as far as would go.
+Unfortunately it was not at all suited for general data serialization.
+For instance, XML represents a tree structure, which can&#8217;t (without some
+serious mischief) represent a cyclic graph. That was a deal breaker for
+a serialization language.</simpara>
+<simpara id="para_xml_also_left_a_bad_taste_in_t">XML also left a bad taste in the mouth for things like config files.
+Consider Apache config files. They have a great similarity to XML, but
+they take a lot of liberties (to abandon strict XML), that make them
+actual usable by regular people.</simpara>
+<simpara id="para_json_is_also_mentioned_because">JSON is also mentioned because it is actually much closer to YAML than
+XML is. (More about that in Chapter 2) JSON is extremely lightweight and
+useful for passing around simple data structures. Unfortunately (like
+XML) it has no way to represent cyclic data references and it has no way
+to represent anything but the most common data types. YAML solves both
+of these issues (and a couple others) in order to be able to serialize
+any data structures. YAML is also less verbose than JSON.</simpara>
 <simpara>include::chapters/YamlProjectsOverview.asc[]</simpara>
 <simpara>include::chapters/YamlInTheWild.asc[]</simpara>
 </sect1>
