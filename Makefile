@@ -1,4 +1,4 @@
-.PHONY: clean
+.PHONY: clean pdf
 
 all: book.xml clean
 
@@ -29,17 +29,24 @@ html: dist
 	    book.asc
 	perl -pi -e 's/^\[\[.+\]\]\n//' chapters/[A-Z]*.asc
 
+pdf:
+	echo >> README
+	svn commit -m "Generating O'Reilly PDF File; orm:commitpdf"
+	sleep 15
+	svn update
+	open pdf/book.xml.pdf
+
 # pdf: dist
 # 	bin/a2x --format=pdf --fop-opts= --asciidoc-opts= \
 # 	    -f etc/asciidoc.conf -f etc/docbook.conf \
 # 	    -a toc -a numbered --unsafe -d book -a icons -b docbook \
 # 	    --doctype=book --icons --verbose -D dist book.asc
 
-pdf: dist
-	bin/a2x --format=pdf --fop-opts= \
-	    --asciidoc-opts='-f etc/asciidoc.conf -f etc/docbook.conf \
-	    -a toc -a numbered -d book -a icons -b docbook' \
-	    --doctype=book --icons --verbose -D dist book.asc
+# pdf: dist
+# 	bin/a2x --format=pdf --fop-opts= \
+# 	    --asciidoc-opts='-f etc/asciidoc.conf -f etc/docbook.conf \
+# 	    -a toc -a numbered -d book -a icons -b docbook' \
+# 	    --doctype=book --icons --verbose -D dist book.asc
 
 dist:
 	mkdir dist
