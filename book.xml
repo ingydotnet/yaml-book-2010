@@ -213,12 +213,12 @@ of these articles, you&#8217;ll see the difference:</simpara>
 <screen>XML: is a ... markup language
 JSON: is a ... data interchange format
 YAML: is a ... data serialization format</screen>
-<simpara id="para_when_the_yaml_project_first_go">When the YAML project first got started in 2001, when Clark Evans and
-Oren Ben-Kiki were trying to make a simpler, friendlier XML. When I
-joined up with them, a bit later, we soon realized that what we were
-making was not a markup language (a way to markup text data), but
-instead a language to store the data structures that were common in our
-favorite programming languages. [The O&#8217;Reilly/OSCON Languages]</simpara>
+<simpara id="para_when_the_yaml_project_first_go">When the YAML project first got started in 2001, Clark Evans and Oren
+Ben-Kiki were trying to make a simpler, friendlier XML. When I joined up
+with them, a bit later, we soon realized that what we were making was
+not a markup language (a way to markup text data), but instead a
+language to store the data structures that were common in our favorite
+programming languages. [The O&#8217;Reilly/OSCON Languages]</simpara>
 <simpara id="para_unfortunately_we_already_had_t">Unfortunately we already had the name "Yet Another Markup Lanugage"
 acronym, but like any good group of geekly guys, we were able to
 backronym our way out of it.</simpara>
