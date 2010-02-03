@@ -1,1 +1,11 @@
 This is the repository for Ingy dot Net's upcoming book on YAML.
+
+= To Do =
+
+- Fix `make pdf` to poll every 3 seconds.
+- `git push` should have a hook to do an `svn commit`
+- Pull glossary from the spec (as a starter)
+- Port bin/add-ids to Perl
+- Change etc/docbook.conf from Dean&Scala to Ingy&YAML 
+- Read getstarteddocbook.xml.pdf
+- Read http://www.methods.co.nz/asciidoc/asciidoc.html
