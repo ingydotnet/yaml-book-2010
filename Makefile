@@ -7,21 +7,21 @@ clean:
 
 book.xml: dist/book.xml
 	bin/docbook-postproc.rb --in $< --out $@
-	xmllint --postvalid --xinclude --noout $@
+	# xmllint --postvalid --xinclude --noout $@
 	perl -pi -e 's/\r//' $@
 
 dist/book.xml: dist chapters/*.asc etc/*.conf
-	bin/add-ids
+	perl bin/add-ids.pl chapters/[A-Z]*.asc
 	asciidoc \
 	    -f etc/asciidoc.conf \
 	    -f etc/docbook.conf \
 	    --unsafe -d book -a icons -b docbook \
 	    -o $@ \
 	    book.asc
-	perl -pi -e 's/^\[\[.+\]\]\n//' chapters/[A-Z]*.asc
+	# perl -pi -e 's/^\[\[.+\]\]\n//' chapters/[A-Z]*.asc
 
 html: dist
-	bin/add-ids
+	perl bin/add-ids.pl chapters/[A-Z]*.asc
 	asciidoc -f etc/html4.conf \
 	    -f etc/asciidoc.conf \
 	    --unsafe -d book -a toc -a numbered -a icons -a toclevels=3 \
@@ -30,11 +30,11 @@ html: dist
 	perl -pi -e 's/^\[\[.+\]\]\n//' chapters/[A-Z]*.asc
 
 pdf:
-	echo >> README
+	echo >> pdf/.buildlog
 	svn commit -m "Generating O'Reilly PDF File; orm:commitpdf"
-	sleep 15
-	svn update
-	open pdf/book.xml.pdf
+# 	sleep 15
+# 	svn update
+# 	open pdf/book.xml.pdf
 
 # pdf: dist
 # 	bin/a2x --format=pdf --fop-opts= --asciidoc-opts= \
