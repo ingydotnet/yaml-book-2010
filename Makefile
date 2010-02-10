@@ -8,7 +8,7 @@ clean:
 book.xml: add_ids dist/book.xml remove_ids
 	bin/docbook-postproc.rb --in dist/book.xml --out $@
 	perl -pi -e 's/\r//' $@
-	xmllint --postvalid --xinclude --noout $@
+	# xmllint --postvalid --xinclude --noout $@
 
 add_ids:
 	perl bin/add-ids.pl chapters/[A-Z]*.asc
