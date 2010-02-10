@@ -4,17 +4,19 @@ This is the repository for Ingy dot Net's upcoming book on YAML.
 
 - Fix `make pdf` to poll every 3 seconds.
 - `git push` should have a hook to do an `svn commit`
-- Port bin/add-ids to Perl
 - Change etc/docbook.conf from Dean&Scala to Ingy&YAML 
 - Read getstarteddocbook.xml.pdf
 - Read http://www.methods.co.nz/asciidoc/asciidoc.html
 
-= 3 Feb =
+= 10 Feb =
 
-- Finish add-ids.pl
+- Create Glossary Appendix
+  - Pull glossary from the spec (as a starter)
 - Read http://www.socialtext.net/yaml-book/index.cgi?book_proposal
 - Review http://www.methods.co.nz/asciidoc/asciidoc.html
 - Rethink Chapter 1 outline
-- Create Glossary Appendix
-  - Pull glossary from the spec (as a starter)
-- Create Glossary Appendix
+
+== Done
+
++ Port bin/add-ids to Perl
++ Finish add-ids.pl
