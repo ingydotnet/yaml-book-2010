@@ -232,12 +232,224 @@ XML) it has no way to represent cyclic data references and it has no way
 to represent anything but the most common data types. YAML solves both
 of these issues (and a couple others) in order to be able to serialize
 any data structures. YAML is also less verbose than JSON.</simpara>
-<simpara>Mapping - A hash.</simpara>
-<simpara>include::chapters/YamlInTheWild.asc[]</simpara>
 </sect1>
 </chapter>
-<index id="Index">
+<chapter id="_the_yaml_data_language">
+<title>The YAML Data Language</title>
+<simpara id="para_coming_soon">Coming soon&#8230;</simpara>
+</chapter>
+<chapter id="_processing_yaml">
+<title>Processing YAML</title>
+<simpara id="para_coming_soon">Coming soon&#8230;</simpara>
+</chapter>
+<chapter id="_the_full_yaml_stack">
+<title>The Full YAML Stack</title>
+<simpara id="para_coming_soon">Coming soon&#8230;</simpara>
+</chapter>
+<chapter id="_the_yaml_programming_reference">
+<title>The YAML Programming Reference</title>
+<simpara id="para_coming_soon">Coming soon&#8230;</simpara>
+</chapter>
+<glossary id="_glossary">
+<title>Glossary</title>
+<simpara id="para_yaml_uses_a_number_of_spe">YAML uses a number of specific terms to describe its structure, syntax and the
+data it represents. Many of these terms have different synonyms in specific
+programming languages. Reading through this glossary is an excellent way to
+get a quick overview of YAML.</simpara>
+<glossentry id="glossentry-alias">
+<glossterm>
+Alias
+</glossterm>
+<glossdef>
+<simpara>
+        A reference to another <emphasis>node</emphasis> in a YAML <emphasis>document</emphasis>.
+        Syntactically this is written with an asterisk followed by an
+        identifier. Like this: <userinput>*foo</userinput>. Every alias in a document must be
+        preceded by an <emphasis>anchor</emphasis> with the same identifier.
+</simpara>
+</glossdef>
+</glossentry>
+<glossentry id="glossentry-anchor">
+<glossterm>
+Anchor
+</glossterm>
+<glossdef>
+<simpara>
+        A name given to a specific node. Syntactically this written with
+        an ampersand followed by an identifier. Like this: <userinput>&amp;foo</userinput>. Nodes
+        that are named with anchors, may be referenced later in a
+        <emphasis>document</emphasis> by an <emphasis>alias</emphasis> node.
+</simpara>
+</glossdef>
+</glossentry>
+<glossentry id="glossentry-block">
+<glossterm>
+Block
+</glossterm>
+<glossdef>
+<simpara>
+        A syntactic style of a <emphasis>collection</emphasis> that uses indentation to
+        indicate structure and scope.
+</simpara>
+</glossdef>
+</glossentry>
+<glossentry id="glossentry-collection">
+<glossterm>
+Collection
+</glossterm>
+<glossdef>
+<simpara>
+        A <emphasis>node</emphasis> that can contain zero or more pieces of data, as
+        opposed to a <emphasis>scalar</emphasis> which is exactly one data point.
+        <emphasis>Mappings</emphasis> and <emphasis>sequences</emphasis> are YAML collections.
+</simpara>
+</glossdef>
+</glossentry>
+<glossentry id="glossentry-directive">
+<glossterm>
+Directive
+</glossterm>
+<glossdef>
+<simpara>
+        A part of a YAML <emphasis>stream</emphasis> that is used to define meta properties
+        of the serialization, and is not part of the serialization
+        itself. Directives are lines that begin with a percent sign,
+        followed by a keyword. Directives apply to the <emphasis>document</emphasis> that
+        follows them. <replaceable>%YAML</replaceable> and <replaceable>%TAG</replaceable> are the only two directives
+        currently.
+</simpara>
+</glossdef>
+</glossentry>
+<glossentry id="glossentry-document">
+<glossterm>
+Document
+</glossterm>
+<glossdef>
+<simpara>
+        The YAML serialization of a complete graph. A document can
+        represent a <emphasis>collection</emphasis> or a single <emphasis>scalar</emphasis>.
+</simpara>
+</glossdef>
+</glossentry>
+<glossentry id="glossentry-explicit-typing">
+<glossterm>
+Explicit Typing
+</glossterm>
+<glossdef>
+<simpara>
+        Every YAML <emphasis>node</emphasis> has a type. Nodes that are preceded by a <emphasis>tag</emphasis>
+        are explicitly typed.
+</simpara>
+</glossdef>
+</glossentry>
+<glossentry id="glossentry-flow">
+<glossterm>
+Flow
+</glossterm>
+<glossdef>
+<simpara>
+        A syntactic style of a <emphasis>collection</emphasis> that uses braces to indicate
+        structure and scope. It is very similar to the JSON format.
+</simpara>
+</glossdef>
+</glossentry>
+<glossentry id="glossentry-implicit-typing">
+<glossterm>
+Implicit Typing
+</glossterm>
+<glossdef>
+<simpara>
+        Every YAML <emphasis>node</emphasis> has a type. Nodes that are <emphasis>not</emphasis> preceded by a
+        <emphasis>tag</emphasis> are implicitly typed.
+</simpara>
+</glossdef>
+</glossentry>
+<glossentry id="glossentry-mapping">
+<glossterm>
+Mapping
+</glossterm>
+<glossdef>
+<simpara>
+        A <emphasis>collection</emphasis> of zero or more <emphasis>key</emphasis> / <emphasis>value</emphasis> pairs. A
+        mapping is the YAML equivalent to a <emphasis>hash</emphasis> in Perl, a
+        <emphasis>dictionary</emphasis> in Python, or an <emphasis>object</emphasis> in JavaScript. It is
+        also sometimes called an <emphasis>associative array</emphasis>. Two important
+        properties of a <emphasis>mapping</emphasis> are that keys are unique, and that
+        the pairs are not ordered.
+</simpara>
+</glossdef>
+</glossentry>
+<glossentry id="glossentry-node">
+<glossterm>
+Node
+</glossterm>
+<glossdef>
+<simpara>
+         A single, addressable, data point. A <emphasis>vertice</emphasis> on a
+         <emphasis>directional cyclic graph</emphasis>. A node may be either a
+         <emphasis>collection</emphasis>, a <emphasis>scalar</emphasis> or an <emphasis>alias</emphasis>.
+</simpara>
+</glossdef>
+</glossentry>
+<glossentry id="glossentry-scalar">
+<glossterm>
+Scalar
+</glossterm>
+<glossdef>
+<simpara>
+        A <emphasis>node</emphasis> that contains a single value, like a string or a number.
+</simpara>
+</glossdef>
+</glossentry>
+<glossentry id="glossentry-sequence">
+<glossterm>
+Sequence
+</glossterm>
+<glossdef>
+<simpara>
+        An ordered <emphasis>collection</emphasis> of zero or more single <emphasis>nodes</emphasis>. A
+        sequence is the YAML equivalent to an <emphasis>array</emphasis> in Perl or a
+        <emphasis>list</emphasis> in Python.
+</simpara>
+</glossdef>
+</glossentry>
+<glossentry id="glossentry-stream">
+<glossterm>
+Stream
+</glossterm>
+<glossdef>
+<simpara>
+        Zero or more YAML <emphasis>documents</emphasis>. A stream is the entire sequence
+        of contiguous characters. For example, an entire YAML file on
+        disk is considered to be a YAML stream.
+</simpara>
+</glossdef>
+</glossentry>
+<glossentry id="glossentry-tag">
+<glossterm>
+Tag
+</glossterm>
+<glossdef>
+<simpara>
+        A string that indicates the type of a given <emphasis>node</emphasis>. A tag is
+        written with an exclamation point followed by a tag string.
+        Examples are <replaceable>!!int</replaceable> and !object:Foo'.
+</simpara>
+</glossdef>
+</glossentry>
+</glossary>
+<chapter id="para_tag">
+<title>YAML Projects Overview</title>
+<simpara id="para_coming_soon">Coming soon&#8230;</simpara>
+</chapter>
+<chapter id="_yaml_in_the_wild">
+<title>YAML in the Wild</title>
+<simpara id="para_coming_soon">Coming soon&#8230;</simpara>
+</chapter>
+<index id="_index">
 <title>Index</title>
-<simpara>include::chapters/Colophon.asc[]</simpara>
+<colophon id="_colophon">
+<simpara id="para_coming_soon">Coming soon&#8230;</simpara>
+</colophon>
 </index>
 </book>
