@@ -26,7 +26,7 @@
 <title>Preface</title>
 <sect1 id="_conventions_used_in_this_book">
 <title>Conventions Used in This Book</title>
-<simpara>The following typographical conventions are used in this book:</simpara>
+<simpara id="para_the_following_typographic">The following typographical conventions are used in this book:</simpara>
 <variablelist>
 <varlistentry id="varlistentry-italic">
 <term>
@@ -79,7 +79,7 @@
 </sect1>
 <sect1 id="_using_code_examples">
 <title>Using Code Examples</title>
-<simpara>This book is here to help you get your job done. In general, you may use
+<simpara id="para_this_book_is_here_to_help">This book is here to help you get your job done. In general, you may use
 the code in this book in your programs and documentation. You do not
 need to contact us for permission unless you’re reproducing a
 significant portion of the code. For example, writing a program that
@@ -89,11 +89,11 @@ require permission. Answering a question by citing this book and quoting
 example code does not require permission. Incorporating a significant
 amount of example code from this book into your product’s
 documentation does require permission.</simpara>
-<simpara>We appreciate, but do not require, attribution. An attribution
+<simpara id="para_we_appreciate_but_do_not">We appreciate, but do not require, attribution. An attribution
 usually includes the title, author, publisher, and ISBN. For example:
 &#8220;<emphasis>YAML</emphasis> by Ingy döt Net. Copyright 2009 O’Reilly Media, Inc.,
 978-0-596-xxxx-x.&#8221;</simpara>
-<simpara>If you feel your use of code examples falls outside fair use or the
+<simpara id="para_if_you_feel_your_use_of_c">If you feel your use of code examples falls outside fair use or the
 permission given above, feel free to contact us at
 <ulink url="mailto:permissions@oreilly.com">permissions@oreilly.com</ulink>.</simpara>
 </sect1>
@@ -102,7 +102,7 @@ permission given above, feel free to contact us at
 <note><simpara>When you see a Safari® Books Online icon on the cover of your
       favorite technology book, that means the book is available online
       through the O’Reilly Network Safari Bookshelf.</simpara></note>
-<simpara>Safari offers a solution that’s better than e-books. It’s a virtual
+<simpara id="para_safari_offers_a_solution">Safari offers a solution that’s better than e-books. It’s a virtual
 library that lets you easily search thousands of top tech books, cut and
 paste code samples, download chapters, and find quick answers when you
 need the most accurate, current information. Try it for free at
@@ -110,7 +110,7 @@ need the most accurate, current information. Try it for free at
 </sect1>
 <sect1 id="_how_to_contact_us">
 <title>How to Contact Us</title>
-<simpara>Please address comments and questions concerning this book to the
+<simpara id="para_please_address_comments_a">Please address comments and questions concerning this book to the
 publisher:</simpara>
 <screen>O’Reilly Media, Inc.
 1005 Gravenstein Highway North
@@ -118,29 +118,29 @@ Sebastopol, CA 95472
 800-998-9938 (in the United States or Canada)
 707-829-0515 (international or local)
 707 829-0104 (fax)</screen>
-<simpara>We have a web page for this book, where we list errata, examples, and
+<simpara id="para_we_have_a_web_page_for_th">We have a web page for this book, where we list errata, examples, and
 any additional information. You can access this page at:</simpara>
 <screen>http://www.oreilly.com/catalog/CATALOGPAGE</screen>
-<simpara>To comment or ask technical questions about this book, send email to:</simpara>
+<simpara id="para_to_comment_or_ask_technic">To comment or ask technical questions about this book, send email to:</simpara>
 <screen>mailto:bookquestions@oreilly.com[bookquestions@oreilly.com]</screen>
-<simpara>For more information about our books, conferences, Resource Centers, and
+<simpara id="para_for_more_information_abou">For more information about our books, conferences, Resource Centers, and
 the O’Reilly Network, see our web site at:</simpara>
 <screen>http://www.oreilly.com</screen>
 </sect1>
 <sect1 id="_acknowledgements">
 <title>Acknowledgements</title>
-<simpara>As we developed the book, many people&#8230;</simpara>
+<simpara id="para_as_we_developed_the_book">As we developed the book, many people&#8230;</simpara>
 </sect1>
 </preface>
 <chapter id="_yaml_a_language_for_data">
 <title>YAML - A Language for Data</title>
-<simpara>My friend and colleague Steve Howell used to always say, "Programming is
+<simpara id="para_my_friend_and_colleague_s">My friend and colleague Steve Howell used to always say, "Programming is
 just about moving data from here (he holds his hands out to his left
 side and moves them over to his right with a dry, sardonic chuckle) to
 there". I&#8217;ve always been of the notion that the better organized your
 data becomes, the more minimal and beautiful the programs you write, to
 move it from one place to the other, can be.</simpara>
-<simpara>YAML is a <emphasis>Language</emphasis> for <emphasis>Data</emphasis>. There are, of course, many ways to
+<simpara id="para_yaml_is_a_language_for_da">YAML is a <emphasis>Language</emphasis> for <emphasis>Data</emphasis>. There are, of course, many ways to
 encode data into a serialized (and even human readable) form. That&#8217;s
 not what I&#8217;m talking about. Just as natural languages are about
 communicating ideas from person to person, and computer languages
@@ -151,22 +151,22 @@ communication can be:</simpara>
 - Computer to Human
 - Computer to Computer
 - Human to Human</screen>
-<simpara>If you&#8217;ve never seen YAML before, well&#8230; trust me&#8230; you actually
+<simpara id="para_if_you_ve_never_seen_yaml">If you&#8217;ve never seen YAML before, well&#8230; trust me&#8230; you actually
 <emphasis>have</emphasis> seen YAML before. The list just above this paragraph is a
 complete and well formed YAML document. To a computer, it represents an
 array of unicode character strings. To an everyday reader like yourself,
 it&#8217;s a list of bullet points.</simpara>
-<simpara>This is the inherent beauty of YAML. Data can be communicated simply,
+<simpara id="para_this_is_the_inherent_beau">This is the inherent beauty of YAML. Data can be communicated simply,
 concisely and accurately to both the computers and people.</simpara>
 <sect1 id="_modern_data_and_programming_languages">
 <title>Modern Data and Programming Languages</title>
-<simpara>When I studied Computer Science back in the prehistoric days (I was
+<simpara id="para_when_i_studied_computer_s">When I studied Computer Science back in the prehistoric days (I was
 actually a COBOL teaching assistant and wrote my first Fortran programs
 on punch cards), we learned about many different data structures. Things
 like binary trees, hashed arrays and doubly linked lists. I got the idea
 that most of my computer career would be about learning new and more
 powerful data structures.</simpara>
-<simpara>When I put my IBM mainframe assembler days to rest, and entered the
+<simpara id="para_when_i_put_my_ibm_mainfra">When I put my IBM mainframe assembler days to rest, and entered the
 brave new world of Perl and other dynamic, modern languages, I was
 amazed that the exact opposite was true. These new languages had
 boiled everything down to 2 kinds of data collections: hashes (aka
@@ -174,7 +174,7 @@ dictionaries, objects, associative arrays, or mappings) and arrays
 (aka lists or sequences). That&#8217;s it. If you wanted anything else, you
 could build it up from these two types. In practice though, you never
 needed to.</simpara>
-<simpara>As I became more familiar with these modern languages, I was impressed
+<simpara id="para_as_i_became_more_familiar">As I became more familiar with these modern languages, I was impressed
 that this view of the world was not a shortcut or cheap way out. It was
 a primary pillar of strength. If all data was shaped in these simple
 ways, then simpler programming seemed imminent.</simpara>
@@ -187,7 +187,7 @@ other words, YAML is a format that lets you put any data object into a
 text file and feed it to a Ruby [or Perl or Python or Java] program or
 show it to a coworker or email it to your mom, and have all of them be
 able to understand and play with it.</simpara>
-<simpara>Consider this YAML object:</simpara>
+<simpara id="para_consider_this_yaml_object">Consider this YAML object:</simpara>
 <screen>recipients:
   languages:
   - Ruby
@@ -198,41 +198,41 @@ able to understand and play with it.</simpara>
 features:
 - Cross Programming Language
 - Human: [ Readable, Meaningful, Editable ]</screen>
-<simpara>If you are an experienced geek, you probably think that YAML is an
+<simpara id="para_if_you_are_an_experienced">If you are an experienced geek, you probably think that YAML is an
 acronym for "Yet Another Markup Language". Good guess. Unfortunately,
 it&#8217;s wrong!</simpara>
-<simpara>YAML is a recursive acronym for "YAML Ain&#8217;t Markup Language". Why?
+<simpara id="para_yaml_is_a_recursive_acron">YAML is a recursive acronym for "YAML Ain&#8217;t Markup Language". Why?
 Because it ain&#8217;t! If you look at Wikipedia, and read the first sentence
 of these articles, you&#8217;ll see the difference:</simpara>
 <screen>XML: is a ... markup language
 JSON: is a ... data interchange format
 YAML: is a ... data serialization format</screen>
-<simpara>When the YAML project first got started in 2001, Clark Evans and Oren
+<simpara id="para_when_the_yaml_project_fir">When the YAML project first got started in 2001, Clark Evans and Oren
 Ben-Kiki were trying to make a simpler, friendlier XML. When I joined up
 with them, a bit later, we soon realized that what we were making was
 not a markup language (a way to markup text data), but instead a
 language to store the data structures that were common in our favorite
 programming languages. [The O&#8217;Reilly/OSCON Languages]</simpara>
-<simpara>Unfortunately we already had the name "Yet Another Markup Lanugage"
+<simpara id="para_unfortunately_we_already">Unfortunately we already had the name "Yet Another Markup Lanugage"
 acronym, but like any good group of geekly guys, we were able to
 backronym our way out of it.</simpara>
-<simpara>When XML came out, people tried to push it as far as would go.
+<simpara id="para_when_xml_came_out_people">When XML came out, people tried to push it as far as would go.
 Unfortunately it was not at all suited for general data serialization.
 For instance, XML represents a tree structure, which can&#8217;t (without some
 serious mischief) represent a cyclic graph. That was a deal breaker for
 a serialization language.</simpara>
-<simpara>XML also left a bad taste in the mouth for things like config files.
+<simpara id="para_xml_also_left_a_bad_taste">XML also left a bad taste in the mouth for things like config files.
 Consider Apache config files. They have a great similarity to XML, but
 they take a lot of liberties (to abandon strict XML), that make them
 actual usable by regular people.</simpara>
-<simpara>JSON is also mentioned because it is actually much closer to YAML than
+<simpara id="para_json_is_also_mentioned_be">JSON is also mentioned because it is actually much closer to YAML than
 XML is. (More about that in Chapter 2) JSON is extremely lightweight and
 useful for passing around simple data structures. Unfortunately (like
 XML) it has no way to represent cyclic data references and it has no way
 to represent anything but the most common data types. YAML solves both
 of these issues (and a couple others) in order to be able to serialize
 any data structures. YAML is also less verbose than JSON.</simpara>
-<simpara>include::chapters/YamlProjectsOverview.asc[]</simpara>
+<simpara>Mapping - A hash.</simpara>
 <simpara>include::chapters/YamlInTheWild.asc[]</simpara>
 </sect1>
 </chapter>
