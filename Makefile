@@ -5,29 +5,33 @@ all: book.xml clean
 clean:
 	rm -fr book.fo dist tmp
 
-book.xml: dist/book.xml
-	bin/docbook-postproc.rb --in $< --out $@
-	# xmllint --postvalid --xinclude --noout $@
+book.xml: add_ids dist/book.xml remove_ids
+	bin/docbook-postproc.rb --in dist/book.xml --out $@
 	perl -pi -e 's/\r//' $@
+	xmllint --postvalid --xinclude --noout $@
 
-dist/book.xml: dist chapters/*.asc etc/*.conf
+add_ids:
 	perl bin/add-ids.pl chapters/[A-Z]*.asc
+
+remove_ids:
+	perl -pi -e 's/^\[\[.+\]\]\n//' chapters/[A-Z]*.asc
+
+dist/book.xml: book.asc dist chapters/*.asc etc/*.conf
 	asciidoc \
 	    -f etc/asciidoc.conf \
 	    -f etc/docbook.conf \
 	    --unsafe -d book -a icons -b docbook \
 	    -o $@ \
-	    book.asc
-	# perl -pi -e 's/^\[\[.+\]\]\n//' chapters/[A-Z]*.asc
+	    $<
 
-html: dist
-	perl bin/add-ids.pl chapters/[A-Z]*.asc
+html: add_ids dist/book.html remove_ids
+
+dist/book.html: book.asc dist chapters/*.asc etc/*.conf
 	asciidoc -f etc/html4.conf \
 	    -f etc/asciidoc.conf \
 	    --unsafe -d book -a toc -a numbered -a icons -a toclevels=3 \
-	    -o dist/book.html \
-	    book.asc
-	perl -pi -e 's/^\[\[.+\]\]\n//' chapters/[A-Z]*.asc
+	    -o $@ \
+	    $<
 
 pdf:
 	echo >> pdf/.buildlog
