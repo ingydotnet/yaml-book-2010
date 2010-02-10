@@ -23,16 +23,17 @@ sub add_ids {
     }
     sub id {
         my $t = shift;
+        return '' if $t =~ /^(TIP|CAUTION)\b/;
         $t = lc($t);
         $t =~ s/\s+/_/g;
         $t =~ s/[^a-z_]/_/g;
         $t =~ s/_{2,}/_/g;
         $t = substr($t, 0, 25) if length($t) > 25;
         $t =~ s/_$//;
-        return "[[para_$t]]";
+        return "[[para_$t]]\n";
     }
     $text =~ s{^(-+\n.*?\n-+\n)}{store("$1")}mesg;
-    $text =~ s{^\n([A-z].*)\n}{"\n" . id("$1") . "\n$1\n"}meg;
+    $text =~ s{^\n([A-Za-z].*)\n}{"\n" . id("$1") . "$1\n"}meg;
     $text =~ s[^=>(.*)\n][$subs->{"$1"}]meg;
     return $text;
 }
