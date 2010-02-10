@@ -23,7 +23,7 @@ sub add_ids {
     }
     sub id {
         my $t = shift;
-        return '' if $t =~ /^(TIP|CAUTION)\b/;
+        return '' if $t =~ /^(TIP|NOTE|CAUTION):/;
         $t = lc($t);
         $t =~ s/\s+/_/g;
         $t =~ s/[^a-z_]/_/g;
