@@ -33,7 +33,7 @@ dist/book.html: book.asc dist chapters/*.asc etc/*.conf
 	    -o $@ \
 	    $<
 
-pdf:
+pdf: book.xml
 	echo >> pdf/.buildlog
 	svn commit -m "Generating O'Reilly PDF File; orm:commitpdf"
 # 	sleep 15

@@ -26,7 +26,7 @@ sub add_ids {
         return '' if $t =~ /^(TIP|NOTE|CAUTION):/;
         $t = lc($t);
         $t =~ s/\s+/_/g;
-        $t =~ s/[^a-z_]/_/g;
+        $t =~ s/[^a-z0-9_]/_/g;
         $t =~ s/_{2,}/_/g;
         $t = substr($t, 0, 25) if length($t) > 25;
         $t =~ s/_$//;
