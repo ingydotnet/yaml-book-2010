@@ -1,0 +1,59 @@
+== Unfiled Writing
+
+This is not a chapter, but a place to put writing that I started but seemed
+out of place.
+
+=== Dive Into YAML
+
+Let's take a look at some actual data in these 3 formats. First we'll look at
+a sample snippet of XML that I found on the Wikipedia entry about XML.
+
+[[question_answer_xml]] 
+----
+<?xml version="1.0">
+<quiz>
+  <question>
+  Who was the forty-second
+  president of the U.S.A.?
+  </question>
+  <answer>
+  William Jefferson Clinton
+  </answer>
+<!-- Note: We need to add
+   more questions later. -->
+</quiz>
+----
+
+[[question_answer_json]] 
+----
+{
+"quiz": [
+  {
+    "question": "Who was the forty-second president of the U.S.A.?",
+    "answer": "William Jefferson Clinton"
+  }
+]
+}
+</quiz>
+----
+
+[[question_answer_yaml]] 
+----
+%YAML: 1.2
+--- !quiz
+question:
+  Who was the forty-second
+  president of the U.S.A.?
+answer: William Jefferson Clinton
+# Note: We need to add
+# more questions later.
+----
+
+[[question_answer_perl]] 
+----
+{
+  question => "Who was the forty-second president of the U.S.A.?"
+  answer => "William Jefferson Clinton",
+}
+----
+
